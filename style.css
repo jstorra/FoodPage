@@ -185,6 +185,10 @@ nav {
   color: var(--secondary-color);
 }
 
+.menu__img img {
+  width: 100%;
+}
+
 /*
 --------------- SERVICES ---------------
 */
@@ -211,7 +215,7 @@ nav {
 }
 
 .service img {
-  width: 350px;
+  width: 100%;
   height: 350px;
 }
 
@@ -306,4 +310,55 @@ nav {
   background-color: var(--cardsbg-color);
   color: var(--secondary-color);
   transition: 0.3s ease-out;
+}
+
+/*
+-------------- MEDIA QUERIES ---------------
+*/
+
+@media screen and (width <= 1460px) {
+  #home {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    align-items: start;
+    text-align: center;
+    padding: 50px 0;
+    row-gap: 30px;
+  }
+
+  .home__img img {
+    display: none;
+  }
+
+  .home__title {
+    font-size: 10rem;
+    line-height: 0.9;
+  }
+
+  .home__info {
+    font-size: 4rem;
+  }
+
+  .home__img {
+    background-color: red;
+    height: 100%;
+    background-image: url(./img/home.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  #about {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    grid-template-areas:
+      "info"
+      "img";
+  }
+
+  .about__img {
+    grid-area: img;
+  }
 }
